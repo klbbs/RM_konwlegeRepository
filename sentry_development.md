@@ -28,7 +28,16 @@ IO
   	
   	接收两种信息:
   	
-  	1. 位姿信息 x,y,z,w四元数信息
+  	1. 位姿信息 x,y,z,w四元数信息,单独定义了imu结构体信息来负责管理
+  	
+  	   ```cpp
+  	   struct IMUData
+  	   {
+  	       Eigen::Quaterniond q; //四元数
+  	       std::chrono::steady_clock::time_point timestamp;//什么时间的数据
+  	   };
+  	   ```
+  	
   	2. 射击信息:射速，射击模式，ft_angle
   	
   	发送命令信息:
@@ -36,5 +45,18 @@ IO
   	​	是否开火，yaw,pitch等
   	
   	此外还有同步数据用的四元数插值
-  	
-  	
+
+3. io::Camera() 
+
+   相机抽象，读取相机,是hikrobot相机和mindvision相机的封装
+
+4. io::USBCamera()
+
+   USB相机抽象
+
+5. auto_aim::YOLO
+
+   yolo抽象
+
+
+
