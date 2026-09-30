@@ -1,3 +1,9 @@
+```
+#include <sys/socket.h>   // socket, bind, listen, accept, connect, send, recv, struct sockaddr, AF_UNIX, SOCK_STREAM...
+#include <sys/un.h>       // struct sockaddr_un, sun_path, AF_UNIX / AF_LOCAL
+#include <unistd.h>       // read, write, close, unlink
+```
+
 # POSIX 进程共享内存
 
 

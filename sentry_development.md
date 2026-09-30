@@ -24,43 +24,17 @@ IO
 
    接收串口信息，发生指令。
 
-   此类含有的信息如下：
-
-   1. 当前状态
-
-   ```cpp
-   enum Mode
-   {
-     idle,
-     auto_aim,
-     small_buff,
-     big_buff,
-     outpost
-   };
-   ```
-	如果是烧饼，还有这些
-   ```cpp
-   enum ShootMode
-   {
-     left_shoot,
-     right_shoot,
-     both_shoot
-   };
-   ```
-
-   还有弹速，无人机还有一个`double ft_angle`
-
-   imu的信息
-   
-   ```cpp
-   struct IMUData
-   {
-       Eigen::Quaterniond q;
-       std::chrono::steady_clock::time_point timestamp;
-   };
-   ```
-   
-   还有管理imu数据的线程队列的`ThreadSafeQueue`.
-   
-   
-
+  	初始化串口通信，获取串口信息。
+  	
+  	接收两种信息:
+  	
+  	1. 位姿信息 x,y,z,w四元数信息
+  	2. 射击信息:射速，射击模式，ft_angle
+  	
+  	发送命令信息:
+  	
+  	​	是否开火，yaw,pitch等
+  	
+  	此外还有同步数据用的四元数插值
+  	
+  	
