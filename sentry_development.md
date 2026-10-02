@@ -24,27 +24,27 @@ IO
 
    接收串口信息，发生指令。
 
-  	初始化串口通信，获取串口信息。
-  	
-  	接收两种信息:
-  	
-  	1. 位姿信息 x,y,z,w四元数信息,单独定义了imu结构体信息来负责管理
-  	
-  	   ```cpp
-  	   struct IMUData
-  	   {
-  	       Eigen::Quaterniond q; //四元数
-  	       std::chrono::steady_clock::time_point timestamp;//什么时间的数据
-  	   };
-  	   ```
-  	
-  	2. 射击信息:射速，射击模式，ft_angle
-  	
-  	发送命令信息:
-  	
-  	​	是否开火，yaw,pitch等
-  	
-  	此外还有同步数据用的四元数插值
+   初始化串口通信，获取串口信息。
+
+   接收两种信息:
+
+   1. 位姿信息 x,y,z,w四元数信息,单独定义了imu结构体信息来负责管理
+
+      ```cpp
+      struct IMUData
+      {
+          Eigen::Quaterniond q; //四元数
+          std::chrono::steady_clock::time_point timestamp;//什么时间的数据
+      };
+      ```
+
+   2. 射击信息:射速，射击模式，ft_angle
+
+   发送命令信息:
+
+   ​	是否开火，yaw,pitch等
+
+   此外还有同步数据用的四元数插值
 
 3. io::Camera() 
 
@@ -56,7 +56,13 @@ IO
 
 5. auto_aim::YOLO
 
-   yolo抽象
+   yolo抽象,详见[yolo](./preBase/preYolo.md)
+
+6. auto_aim::Solver()
+
+   装甲板解算,详见[solver](./preBase/preSolver.md)
+
+
 
 
 
