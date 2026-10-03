@@ -31,6 +31,17 @@
 
 4. `tools::eulers`
 
-   四元数转欧拉角,pitch,roll,yaw
 
-   
+​	四元数转欧拉角,pitch,roll,yaw
+
+5. `tools::xyz2ypd()`
+
+   笛卡尔坐标系转球面坐标系
+
+6. `tools::ypd2xyz_jacobian()`
+
+   输出ypd(球面坐标系)转笛卡尔坐标系的雅可比矩阵
+
+7. `tools::rotation_matrix()`
+
+   把 yaw-pitch-roll（YPR）欧拉角 转成 3×3 旋转矩阵

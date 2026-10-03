@@ -9,7 +9,7 @@
 ​	顾名思义，将Eigen库里面的Matrix矩阵转换为cv库里面的矩阵Mat
 ​	需要注意的是如果Eigen矩阵是按列优先存储的话，转换后会变成其转置
 
-#### PNP解算函数
+#### cv::solvePnP(): PNP解算函数
 
 ```cpp
 bool cv::solvePnP(
@@ -53,7 +53,26 @@ $$
 ​	src: 输入的旋转向量，通常为1\*3或3\*1
 ​	dst: 输出的旋转矩阵, 3\*3
 
-​	
+#### cv::projectPoints(): 将 3D 点投影到 2D 图像平面
+
+```cpp
+void cv::projectPoints(
+    InputArray objectPoints,
+    InputArray rvec,
+    InputArray tvec,
+    InputArray cameraMatrix,
+    InputArray distCoeffs,
+    OutputArray imagePoints,
+    OutputArray jacobian = noArray(),
+    double aspectRatio = 0
+);	
+```
+
+​	objectPoints: 物体3D点集
+​	rvec,tvec: 物体到相机的旋转和平移向量
+​	cameraMatrix,distCoeffs: 相机内参and畸变
+​	imagePoints: 投影后得到的2d点集
+​	其他俩没用到，不重要，jacobian是雅可比矩阵，对输入的各个参数的偏导.
 
 ​	
 
