@@ -28,4 +28,9 @@
    };
    ```
 
+
+4. `tools::eulers`
+
+   四元数转欧拉角,pitch,roll,yaw
+
    
